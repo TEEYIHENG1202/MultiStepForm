@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Multi Step Form</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="MultiStepForm.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <h1>SignUp Account</h1>
+            <div>
+                <div class="progress">
+                    <span>Name</span>
+                    <span>Contact</span>
+                    <span>Account</span>
+                </div>
+            </div>
+            <div class="form">
+                <form onSubmit="alert('Successful Submited!!!')">
+                    <div class="page">
+                        <h2>Name Info</h2>
+                        <div class="label">First Name</div>
+                        <input type="text" class="fname" placeholder="FirstName" oninput="valueChange()"/><br/>
+                        <div class="label">Last Name</div>
+                        <input type="text" class="lname" placeholder="LastName" oninput="valueChange()"/><br/>
+                        <div class="navigation">
+                            <input type="button" class="next1" value="Next" disabled/>
+                        </div>
+                    </div>
+
+                    <div class="page">
+                        <h2>Contact Info</h2>
+                        <div class="label">Email</div>
+                        <input type="email" class="email" placeholder="Email" oninput="valueChange()"/><br/>
+                        <div class="label">Phone</div>
+                        <input type="text" class="phone" pattern="^\d{3}[-]{1}\d{7}$" placeholder="xxx-xxxxxxx" oninput="valueChange()"/><br/>
+                        <div class="navigation">
+                            <input type="button" class="prev1" value="Prev"/>
+                            <input type="button" class="next2" value="Next" disabled/>
+                        </div>
+                    </div>
+
+                    <div class="page">
+                        <h2>Account Info</h2>
+                        <div class="label">Account Email</div>
+                        <input type="email" class="accountEmail" placeholder="Email" oninput="valueChange()"/><br/>
+                        <div class="label">Password</div>
+                        <input type="password" class="password" pattern="(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+!=])(?=.{8,}).*$" 
+                        title="1 lowercase, 1 uppercase, 1 digit, 1 symbol and length at least 8 " oninput="valueChange()"/><br/>
+                        <div class="navigation">
+                            <input type="button" class="prev2" value="Prev"/>
+                            <input type="submit" value="Submit" class="submit" disabled/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="MultiStepForm.js"></script>
+    </body>
+</html>
